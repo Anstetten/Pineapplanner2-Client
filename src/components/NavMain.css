@@ -1,0 +1,9 @@
+.NavMain{
+width: 100%;
+ display: flex;
+ justify-content: flex-start;
+}
+
+.nav-list{
+    display: flex;
+}
