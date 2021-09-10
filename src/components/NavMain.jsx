@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { NavLink } from "react-router-dom";
 import { withUser } from "../components/Auth/withUser";
 import apiHandler from "../api/apiHandler";
@@ -6,8 +6,12 @@ import pineLogo from "../Images/pineapple.png"
 import "./NavMain.css";
 import {FaBars} from 'react-icons/fa'
 
+
 const NavMain = (props) => {
   const { context } = props;
+  const [click, setClick] = useState(false);
+  const handleClick = ()=> setClick(!click);
+  const closeMobileMenu = ()=> setClick(false);
 
 
 
@@ -24,18 +28,18 @@ const NavMain = (props) => {
 
   return (
     <nav className="NavMain">
-      <NavLink className="logoWrapper" exact to="/">
+      <NavLink onClick={closeMobileMenu} className="logoWrapper" exact to="/">
         <img id="smallLogo" src={pineLogo} alt="logo"/>
         <h3 className="logo">PineaPlanner</h3>
       </NavLink>
-      <FaBars className='bars'/>
-      <ul className="nav-list">
+      <FaBars className='bars' onClick={handleClick}/>
+      <ul className={click ? "nav-list mobile" : "nav-list"}>
         <div className="navLeft">
-          <li>
+          <li onClick={closeMobileMenu}>
             <NavLink  to="/recipes">Recipes</NavLink>
           </li>
           {context.isLoggedIn &&(
-                          <li>
+                          <li onClick={closeMobileMenu}>
                           <NavLink  to="/planner">Meal Planner</NavLink>
                           </li>
           ) }
@@ -45,12 +49,12 @@ const NavMain = (props) => {
           <React.Fragment>
 
             <div className="navRight">
-            <li>
+            <li onClick={closeMobileMenu}>
               <NavLink to="/profile">
                 {context.user && context.user.email}
               </NavLink>
             </li>
-            <li>
+            <li  onClick={closeMobileMenu}>
               <p onClick={handleLogout}>Logout</p>
             </li>
             </div>
@@ -59,10 +63,10 @@ const NavMain = (props) => {
         {!context.isLoggedIn && (
           <React.Fragment>
             <div className="navRight">
-            <li>
+            <li  onClick={closeMobileMenu}>
               <NavLink to="/signin">Log in</NavLink>
             </li>
-            <li>
+            <li  onClick={closeMobileMenu}>
               <NavLink to="/signup">Create account</NavLink>
             </li>
             </div>

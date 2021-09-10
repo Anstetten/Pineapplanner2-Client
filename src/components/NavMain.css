@@ -1,21 +1,31 @@
+:root {
+    --navHeight:70px;
+  }
+
 .NavMain{
 width: 100vw;
  display: flex;
  justify-content: space-between;
  align-items: center;
- height: 70px;
+ height: var(--navHeight);
  background-color: #fca21177;
  padding-left: 0.5rem;
+ box-shadow: -3px 3px 2px gray;
 }
 
 li{
     margin:20px;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+    position: relative;
+    font-weight: 700;
 }
 
 .nav-list{
     width: 100%;
     display: flex;
     justify-content: space-between;
+    transition: all 0.2s ease-in-out;
 }
 
 /* Logo */
@@ -40,7 +50,6 @@ li{
     .bars{
         display:block;
         position: absolute;
-
         right:0;
         transform: translateX(-0.5rem);
         cursor: pointer;
@@ -60,7 +69,37 @@ li{
 }
 
 @media screen and (max-width: 700px){
-    .navRight,.navLeft{
-        display: none;
+    .nav-list{
+        width: fit-content;
+        transform-origin: 100% 0%;
+        transform: scaleX(0) scaleY(0);
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: var(--navHeight);
+        z-index: 10;
+    }
+
+    .nav-list li:hover{
+        transform: scale(1.05) ;
+    }
+
+    .nav-list.mobile{
+        transform: scaleX(1) scaleY(1);
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: var(--navHeight);
+        background-color: #fca21149;
+        box-shadow: -3px 3px 2px gray;
+        z-index: 10;
+    }
+
+    .navLeft,.navRight{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
