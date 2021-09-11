@@ -1,0 +1,14 @@
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo.small span{
+    color: var(--pineYellow);
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+.logo.large span{
+    color: var(--pineYellow);
+    font-weight: bolder;
+    font-size: 3rem;
+}

@@ -1,5 +1,6 @@
 :root {
-    --navHeight:70px;
+    --navHeight:60px;
+    --pineYellow:#ffc66c;
   }
 
 .NavMain{
@@ -8,9 +9,8 @@ width: 100vw;
  justify-content: space-between;
  align-items: center;
  height: var(--navHeight);
- background-color: #fca21177;
  padding-left: 0.5rem;
- box-shadow: -3px 3px 2px gray;
+ box-shadow:0 0.2rem 0.8rem hsl(0deg 0% 59% / 40%);
 }
 
 li{
@@ -31,7 +31,7 @@ li{
 /* Logo */
 
 #smallLogo{
-    height: 60px;
+    height: calc( var(--navHeight) * 0.9);
 }
 
 .logoWrapper{
@@ -41,17 +41,35 @@ li{
     margin:0 0.8rem;
 }
 
+
 /* Bars */
 .bars{
     display: none;
 }
 
+.barLogo{
+    color: white;
+    font-size: 1.9rem;;
+}
+
+.barWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 @media screen and (max-width: 700px){
     .bars{
-        display:block;
+        height: var(--navHeight);
+        width: var(--navHeight);
+        background-color: #ffc66c;
+        display:flex;
+        align-items: center;
+        justify-content: center;
         position: absolute;
         right:0;
-        transform: translateX(-0.5rem);
+        /* transform: translateX(-0.5rem); */
         cursor: pointer;
         font-size: 1.8rem;
     }
@@ -92,8 +110,8 @@ li{
         position: absolute;
         right: 0;
         top: var(--navHeight);
-        background-color: #fca21149;
-        box-shadow: -3px 3px 2px gray;
+        background-color: white;
+        box-shadow:0 0.2rem 0.8rem hsl(0deg 0% 59% / 40%);
         z-index: 10;
     }
 
