@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { withRouter, Redirect } from "react-router-dom";
 import apiHandler from "../../api/apiHandler";
 import { withUser } from "../Auth/withUser";
+import StyledButton from "../Base/StyledButton/StyledButton";
+
 
 class FormSignin extends Component {
   state = {
@@ -35,6 +37,8 @@ class FormSignin extends Component {
       return <Redirect to="/" />;
     }
 
+
+
     return (
       <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
         <h2>Signin</h2>
@@ -42,7 +46,13 @@ class FormSignin extends Component {
         <input type="email" id="email" name="email" />
         <label htmlFor="password">Password</label>
         <input type="password" id="password" name="password" />
-        <button>Submit</button>
+        <StyledButton
+          color="primary"
+          variant="contained"
+          size="small"
+          type="submit"
+          label="Submit"
+          >Submit</StyledButton>
       </form>
     );
   }

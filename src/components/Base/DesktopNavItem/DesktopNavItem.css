@@ -1,0 +1,33 @@
+.desktopNav{
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    color:rgba(0, 0, 0, 0.54);
+    transition: all 0.2s ease-in-out;
+}
+
+.desktopNav:hover{
+    color:var(--pineYellow);
+    transform: scale(1.06)
+}
+
+.desktopNav p{
+    position: relative;
+}
+
+.desktopNav p::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.54);
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+}
+.desktopNav p:hover::after{
+    background-color: var(--pineYellow);
+    transform: scale(1);
+
+}

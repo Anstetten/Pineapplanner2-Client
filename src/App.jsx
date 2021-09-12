@@ -9,6 +9,7 @@ import Profile from "./pages/Profile";
 import Recipes from "./components/Recipes/Recipes";
 import Planner from "./components/Planner/Planner";
 
+
 function App() {
   const [click, setClick] = useState(false);
   const handleClick = (e)=> setClick(!click);
