@@ -3,6 +3,7 @@ import { withRouter, Redirect } from "react-router-dom";
 import apiHandler from "../../api/apiHandler";
 import { withUser } from "../Auth/withUser";
 import StyledButton from "../Base/StyledButton/StyledButton";
+import Container from '@material-ui/core/Container';
 
 
 class FormSignin extends Component {
@@ -40,6 +41,7 @@ class FormSignin extends Component {
 
 
     return (
+      <Container component="main" maxWidth="xs">
       <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
         <h2>Signin</h2>
         <label htmlFor="email">Email</label>
@@ -54,6 +56,7 @@ class FormSignin extends Component {
           label="Submit"
           >Submit</StyledButton>
       </form>
+      </Container>
     );
   }
 }

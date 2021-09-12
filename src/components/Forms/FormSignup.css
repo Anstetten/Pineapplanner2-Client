@@ -1,0 +1,18 @@
+.signupDiv{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar{
+    margin-bottom: 1rem;
+}
+
+.signupDiv form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
