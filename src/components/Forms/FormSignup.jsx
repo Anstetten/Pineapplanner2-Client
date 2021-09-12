@@ -11,31 +11,15 @@ import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
+import StyledButton from "../Base/StyledButton/StyledButton";
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    marginTop: "1 rem",
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  avatar: {
-    margin:"1 rem",
-    backgroundColor: theme.palette.primary.main,
-  },
-  form: {
-    width: '100%', // Fix IE 11 issue.
-    marginTop: "1 rem",
-  },
-  submit: {
-    margin: "1 rem",
-  },
-}));
 
 class FormSignup extends Component {
   state = {
     email: "",
     password: "",
+    firstName:"",
+    lastName:"",
   };
 
   handleChange = (event) => {
@@ -43,6 +27,7 @@ class FormSignup extends Component {
     const key = event.target.name;
 
     this.setState({ [key]: value });
+
   };
 
   handleSubmit = (event) => {
@@ -68,7 +53,7 @@ class FormSignup extends Component {
         <CssBaseline/>
         <div className="signupDiv"> 
           <Avatar className='avatar'>
-            <LockOutlinedIcon/>
+            <LockOutlinedIcon />
           </Avatar>
           <Typography color="primary" component="h4" variant="h4">
             Sign up
@@ -81,7 +66,10 @@ class FormSignup extends Component {
                   fullWidth
                   id="firstName"
                   label="First Name"
-                  autofocus/>
+                  autofocus
+                  value={this.state.firstName}
+                  type="firstName"
+                  onChange={this.handleChange}/>
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -89,27 +77,43 @@ class FormSignup extends Component {
                   fullWidth
                   id="lastName"
                   label="Last Name"
+                  value={this.state.lastName}
+                  type="lastName"
+                  onChange={this.handleChange}
                   />
               </Grid>
-
+              <Grid item xs={12}>
+                <TextField
+                  name="email" 
+                  fullWidth
+                  id="email"
+                  label="E-mail*"
+                  value={this.state.email}
+                  type="email"
+                  onChange={this.handleChange}
+                  />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  name="password" 
+                  fullWidth
+                  id="password"
+                  label="Password*"
+                  value={this.state.password}
+                  type="password"
+                  onChange={this.handleChange}
+                  />
+              </Grid>
             </Grid>
-            <label htmlFor="email">Email</label>
-            <input
-              onChange={this.handleChange}
-              value={this.state.email}
-              type="email"
-              id="email"
-              name="email"
-              />
-            <label htmlFor="password">Password</label>
-            <input
-              onChange={this.handleChange}
-              value={this.state.password}
-              type="password"
-              id="password"
-              name="password"
-              />
-            <button>Submit</button>
+            <StyledButton
+                  id="signupButton"
+                  color="primary"
+                  variant="contained"
+                  size="small"
+                  type="submit"
+                  label="Submit">
+                  Create Account
+            </StyledButton>
           </form>
         </div>
       </Container>

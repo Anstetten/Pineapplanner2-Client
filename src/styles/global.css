@@ -39,7 +39,7 @@ ul {
   height: 100%;
   z-index: -5;
   transform: translateX(-25%) rotateZ(-7deg);
-  background-image: url("https://www.allmychefs.com/images/1412/1200-auto/ananas_000.jpg?poix=50&poiy=50");
+  background-image: url("../Images/ananas2.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -55,7 +55,7 @@ ul {
     bottom: 0;
     z-index: -5;
     transform: translateY(20%) rotateZ(-10deg);
-    background-image: url("https://www.allmychefs.com/images/1412/1200-auto/ananas_000.jpg?poix=50&poiy=50");
+    background-image: url("../Images/ananas2.png");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
