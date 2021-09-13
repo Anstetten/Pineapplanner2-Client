@@ -3,7 +3,6 @@ import { withRouter, Redirect } from "react-router-dom";
 import { withUser } from "../Auth/withUser";
 import apiHandler from "../../api/apiHandler";
 import Container from '@material-ui/core/Container';
-import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import "./FormSignup.css"
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
@@ -51,16 +50,16 @@ class FormSignup extends Component {
     return (
       <Container component="main" maxWidth="xs">
         <CssBaseline/>
-        <div className="signupDiv"> 
+        <main className="signupDiv"> 
           <Avatar className='avatar'>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography color="primary" component="h4" variant="h4">
+          <Typography color="primary" component="h1" variant="h4">
             Sign up
           </Typography>
           <form onSubmit={this.handleSubmit}>
-            <Grid container spacing={2} justifyContent="center" justifyContent="center">
-              <Grid item xs={12} sm={6}  justifyContent="center" justifyContent="center">
+            <Grid container spacing={2} justifyContent="center">
+              <Grid item xs={12} sm={6} justifyContent="center">
                 <TextField
                   name="firstName" 
                   fullWidth
@@ -115,7 +114,7 @@ class FormSignup extends Component {
                   Create Account
             </StyledButton>
           </form>
-        </div>
+        </main>
       </Container>
     );
   }
